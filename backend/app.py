@@ -1,5 +1,7 @@
 from pathlib import Path
+import os
 from fastapi import FastAPI, Header, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import base64
 import binascii
@@ -34,6 +36,19 @@ def get_model():
     return _model
 
 app = FastAPI(title="AI Voice Detection API")
+
+# CORS (set this in deployment)
+# Example: CORS_ORIGINS="https://your-frontend.vercel.app,https://yourdomain.com"
+cors_origins = os.getenv("CORS_ORIGINS", "").strip()
+allow_origins = [o.strip() for o in cors_origins.split(",") if o.strip()]
+if allow_origins:
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=allow_origins,
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
 
 # ---------------- REQUEST MODELS ----------------
 

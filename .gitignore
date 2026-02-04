@@ -9,7 +9,7 @@ __pycache__/
 *.pyc
 
 # Large data & models
-backend/data/dataset/
+# Dataset is tracked via Git LFS (see .gitattributes)
 backend/data/features.csv
 backend/models/
 
