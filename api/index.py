@@ -18,7 +18,7 @@ app = FastAPI(title="AI Voice Detection API")
 BASE_DIR = Path(__file__).resolve().parent
 MODEL_PATH = BASE_DIR / "models" / "voice_ai_detector.pkl"
 
-API_KEY = "sk_test_123456789"  # change before deployment (or use env var later)
+API_KEY = "jAx3wJGhkiVOlUHsHCJNLJH8OU4s8DAF-Jvjy0zSlKY"  # change before deployment (or use env var later)
 SUPPORTED_LANGUAGES = ["Tamil", "English", "Hindi", "Malayalam", "Telugu"]
 
 _model = None
