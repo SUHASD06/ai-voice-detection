@@ -1,7 +1,16 @@
 {
-  "buildCommand": "cd frontend && npm install && npm run build",
+  "buildCommand": "mkdir -p api/models && cp backend/models/voice_ai_detector.pkl api/models/voice_ai_detector.pkl && cd frontend && npm install && npm run build",
   "outputDirectory": "frontend/dist",
+  "functions": {
+    "api/index.py": {
+      "runtime": "python3.11"
+    }
+  },
   "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index.py"
+    },
     {
       "source": "/(.*)",
       "destination": "/index.html"
