@@ -17,7 +17,7 @@ import warnings
 BASE_DIR = Path(__file__).resolve().parent
 MODEL_PATH = BASE_DIR / "models" / "voice_ai_detector.pkl"
 
-API_KEY = "ZhQ0lj0BuL7hbzeHKbMsyycEd2DONwmE8yflYwULVsE"   
+API_KEY = "jAx3wJGhkiVOlUHsHCJNLJH8OU4s8DAF-Jvjy0zSlKY"   
 SUPPORTED_LANGUAGES = ["Tamil", "English", "Hindi", "Malayalam", "Telugu"]
 
 # Load model from backend/models/ (lazy so server starts even if file missing)
